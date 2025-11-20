@@ -1,0 +1,182 @@
+@import '../styles/variables.scss';
+
+.achievements-view {
+    padding: 40px 40px 40px 120px;
+    min-height: 100vh;
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: var(--gap-xl);
+        gap: var(--gap-lg);
+
+        .header-left {
+            h1 {
+                font-size: 2rem;
+                font-weight: 300;
+                margin-bottom: var(--gap-sm);
+            }
+
+            .subtitle {
+                color: var(--text-secondary);
+                font-size: 1rem;
+            }
+        }
+
+        .score-badge {
+            display: flex;
+            align-items: center;
+            gap: var(--gap-md);
+            background: var(--bg-tile);
+            padding: var(--gap-md) var(--gap-lg);
+            border-radius: 8px;
+            border-left: 4px solid var(--xbox-green);
+
+            svg {
+                color: var(--xbox-green);
+            }
+
+            .score {
+                font-size: 1.8rem;
+                font-weight: bold;
+                line-height: 1;
+                color: var(--text-primary);
+            }
+
+            .label {
+                font-size: 0.7rem;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap-xl);
+        padding-bottom: 60px;
+
+        @media (max-width: 1200px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .skills-panel,
+    .certifications-panel {
+        h2 {
+            font-size: 1.3rem;
+            color: var(--xbox-green);
+            margin-bottom: var(--gap-lg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+
+    .skills-compact {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+
+        .skill-row {
+            background: var(--bg-tile);
+            padding: var(--gap-md);
+            border-radius: 6px;
+            transition: background 0.2s;
+
+            &:hover {
+                background: var(--bg-tile-hover);
+            }
+
+            .skill-header {
+                display: flex;
+                align-items: center;
+                gap: var(--gap-sm);
+                margin-bottom: var(--gap-sm);
+                font-weight: 600;
+                font-size: 0.9rem;
+                color: var(--text-primary);
+
+                svg {
+                    flex-shrink: 0;
+                }
+            }
+
+            .skill-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+
+                .skill-tag {
+                    background: rgba(16, 124, 16, 0.15);
+                    color: var(--text-primary);
+                    padding: 4px 10px;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                    border: 1px solid rgba(16, 124, 16, 0.3);
+                }
+            }
+        }
+    }
+
+    .certifications-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+
+        .cert-card {
+            background: var(--bg-tile);
+            padding: var(--gap-md);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: var(--gap-md);
+            transition: all 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                background: var(--bg-tile-hover);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            .cert-icon {
+                width: 48px;
+                height: 48px;
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            .cert-content {
+                flex: 1;
+                min-width: 0;
+
+                h3 {
+                    font-size: 1rem;
+                    margin-bottom: 4px;
+                    color: var(--text-primary);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                p {
+                    color: var(--text-secondary);
+                    font-size: 0.8rem;
+                }
+            }
+
+            .cert-score {
+                font-weight: bold;
+                font-size: 1.1rem;
+                color: var(--xbox-green);
+                flex-shrink: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+@import '../styles/variables.scss';
+
+.xbox-tile {
+    background: var(--bg-tile);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+
+    &.tile-small {
+        grid-column: span 1;
+        grid-row: span 1;
+        aspect-ratio: 1;
+    }
+
+    &.tile-medium {
+        grid-column: span 2;
+        grid-row: span 2;
+        aspect-ratio: 1;
+    }
+
+    &.tile-wide {
+        grid-column: span 2;
+        grid-row: span 1;
+        aspect-ratio: 2/1;
+    }
+
+    &.tile-large {
+        grid-column: span 4;
+        grid-row: span 4;
+    }
+
+    &:hover,
+    &:focus-visible {
+        background: var(--bg-tile-hover);
+        border-color: rgba(255, 255, 255, 0.5);
+        outline: none;
+
+        .tile-glow {
+            opacity: 1;
+        }
+    }
+
+    /* Inner content container */
+    .tile-content {
+        width: 100%;
+        height: 100%;
+        padding: var(--gap-md);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        z-index: 2;
+        position: relative;
+    }
+
+    /* Glow effect */
+    .tile-glow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+        pointer-events: none;
+    }
+}

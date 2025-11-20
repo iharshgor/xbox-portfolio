@@ -1,0 +1,134 @@
+@import '../styles/variables.scss';
+
+.games-library {
+  padding: 40px 40px 40px 120px;
+  min-height: 100vh;
+
+  .library-header {
+    margin-bottom: var(--gap-xl);
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: var(--gap-sm);
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--gap-lg);
+    padding-bottom: 60px;
+  }
+
+  .project-card {
+    background: var(--bg-tile);
+    border-radius: 8px;
+    padding: var(--gap-lg);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--bg-tile-hover);
+      box-shadow: var(--tile-shadow);
+    }
+
+    .project-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    .project-header {
+      margin-bottom: var(--gap-md);
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: var(--gap-sm);
+        color: var(--text-primary);
+      }
+
+      .company-info {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--xbox-green);
+        font-size: 0.85rem;
+        font-weight: 600;
+
+        svg {
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    .description {
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: var(--gap-md);
+      font-size: 0.9rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: var(--gap-md);
+      flex-wrap: wrap;
+
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        flex: 1;
+
+        .tech-badge {
+          padding: 3px 8px;
+          border-radius: 3px;
+          font-size: 0.75rem;
+          background: rgba(16, 124, 16, 0.15);
+          border: 1px solid rgba(16, 124, 16, 0.3);
+          color: var(--text-primary);
+          white-space: nowrap;
+
+          &.more {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+
+      .period {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        white-space: nowrap;
+
+        svg {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

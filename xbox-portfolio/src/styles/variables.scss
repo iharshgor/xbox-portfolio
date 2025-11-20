@@ -1,0 +1,37 @@
+:root {
+  /* Xbox Brand Colors */
+  --xbox-green: #107C10;
+  --xbox-light-green: #2dd82d;
+  --xbox-dark-green: #0b520b;
+  
+  /* Backgrounds */
+  --bg-dark: #101010;
+  --bg-tile: rgba(255, 255, 255, 0.08);
+  --bg-tile-hover: rgba(255, 255, 255, 0.15);
+  --bg-glass: rgba(16, 16, 16, 0.85);
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #6e6e6e;
+
+  /* Borders & Effects */
+  --focus-border: 3px solid #ffffff;
+  --tile-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --glow-green: 0 0 15px rgba(16, 124, 16, 0.6);
+
+  /* Spacing */
+  --gap-sm: 8px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+  --gap-xl: 40px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.3s;
+}
+
+$xbox-green: var(--xbox-green);
+$bg-dark: var(--bg-dark);
+$text-primary: var(--text-primary);
