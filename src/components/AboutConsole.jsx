@@ -7,86 +7,124 @@ const AboutConsole = () => {
         <div className="about-console">
             <h1>About Me</h1>
 
-            <div className="profile-section">
-                <div className="profile-header">
-                    <div className="avatar-large">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Harsh" alt="Harsh Gor" />
+            <div className="bento-grid">
+                {/* Profile Tile - Large Hero */}
+                <div className="bento-tile profile-tile">
+                    <div className="profile-content">
+                        <div className="avatar-container">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Harsh" alt="Harsh Gor" />
+                            <div className="online-status" />
+                        </div>
+                        <div className="profile-text">
+                            <h2>Harsh Gor</h2>
+                            <p className="gamertag">iharshgor</p>
+                            <p className="title">Application Developer & DevOps Engineer</p>
+                            <div className="badges">
+                                <span className="badge">Pro</span>
+                                <span className="badge">Dev</span>
+                                <span className="badge">Ops</span>
+                            </div>
+                            <p className="bio">"I am an enthusiast, hungry to learn, and easily adaptable."</p>
+                            <p className="tagline">💻 Software developer by day, gamer by night. 🎮</p>
+                        </div>
                     </div>
-                    <div className="profile-info">
-                        <h2>Harsh Gor</h2>
-                        <p className="title">Application Developer & DevOps Engineer</p>
-                        <p className="bio">I am an enthusiast, hungry to learn, and easily adaptable.</p>
+                </div>
+
+                {/* Current Role Tile - "Current Quest" */}
+                <div className="bento-tile role-tile">
+                    <div className="tile-header">
+                        <h3>Current Quest</h3>
+                        <span className="xp-badge">ACTIVE</span>
+                    </div>
+                    <div className="role-content">
+                        <h4>Sr. Software Engineer</h4>
+                        <p className="company">SofGuruz LLP</p>
+                        <p className="location">Ahmedabad, India</p>
+                        <div className="quest-objectives">
+                            <p><strong>Objectives:</strong></p>
+                            <ul>
+                                <li>Develop fintech solutions (Python/FastAPI)</li>
+                                <li>Orchestrate CI/CD pipelines (Jenkins/GitLab)</li>
+                                <li>Manage cloud infrastructure (AWS/Docker)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="settings-group">
-                <h2>Contact Information</h2>
-                <div className="setting-item">
-                    <span className="label"><Mail size={18} /> Email</span>
-                    <span className="value">harshmgor@gmail.com</span>
+                {/* Contact Tile - "Player Stats" */}
+                <div className="bento-tile contact-tile">
+                    <div className="tile-header">
+                        <h3>Player Stats</h3>
+                    </div>
+                    <div className="stats-list">
+                        <div className="stat-item">
+                            <Mail size={20} className="icon" />
+                            <div className="stat-info">
+                                <span className="label">Email</span>
+                                <span className="value">harshmgor@gmail.com</span>
+                            </div>
+                        </div>
+                        <div className="stat-item">
+                            <Phone size={20} className="icon" />
+                            <div className="stat-info">
+                                <span className="label">Phone</span>
+                                <span className="value">+91 95861 42795</span>
+                            </div>
+                        </div>
+                        <div className="stat-item">
+                            <MapPin size={20} className="icon" />
+                            <div className="stat-info">
+                                <span className="label">Base</span>
+                                <span className="value">Ahmedabad, India</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="setting-item">
-                    <span className="label"><Phone size={18} /> Phone</span>
-                    <span className="value">+91 95861 42795</span>
-                </div>
-                <div className="setting-item">
-                    <span className="label"><MapPin size={18} /> Location</span>
-                    <span className="value">Ahmedabad, India</span>
-                </div>
-                <div className="setting-item">
-                    <span className="label"><Linkedin size={18} /> LinkedIn</span>
-                    <span className="value">linkedin.com/in/iharshgor</span>
-                </div>
-                <div className="setting-item">
-                    <span className="label"><Github size={18} /> GitHub</span>
-                    <span className="value">github.com/iharshgor</span>
-                </div>
-            </div>
 
-            <div className="settings-group">
-                <h2>Education</h2>
-                <div className="education-item">
-                    <h3>M.Sc. IT</h3>
-                    <p>K.S.K.V. Kachchh University, Bhuj</p>
-                    <span className="period">2017 - 2019</span>
-                    <span className="grade">Grade: A+</span>
+                {/* Education Tile - "Level History" */}
+                <div className="bento-tile education-tile">
+                    <div className="tile-header">
+                        <h3>Level History</h3>
+                    </div>
+                    <div className="education-list">
+                        <div className="edu-item">
+                            <div className="year">2019</div>
+                            <div className="details">
+                                <h4>M.Sc. IT</h4>
+                                <p>K.S.K.V. Kachchh University</p>
+                                <span className="grade">Rank: A+</span>
+                            </div>
+                        </div>
+                        <div className="edu-item">
+                            <div className="year">2017</div>
+                            <div className="details">
+                                <h4>BCA</h4>
+                                <p>Sanskar Institute</p>
+                                <span className="grade">Rank: A+</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="education-item">
-                    <h3>Bachelor of Computer Application</h3>
-                    <p>Sanskar Institute of Management & Information Technology, Bhuj</p>
-                    <span className="period">2014 - 2017</span>
-                    <span className="grade">Grade: A+</span>
-                </div>
-            </div>
 
-            <div className="settings-group">
-                <h2>Current Role</h2>
-                <div className="role-card">
-                    <h3>Sr. Software Engineer</h3>
-                    <p className="company">SofGuruz LLP, Ahmedabad</p>
-                    <p className="period">April 2024 - Present</p>
-                    <ul>
-                        <li>Working as a Python Developer and DevOps Engineer</li>
-                        <li>Experience in CI/CD processes using Jenkins and GitLab</li>
-                        <li>Developing fintech applications for loans and bill payments</li>
-                        <li>Streamlined build, test, and deploy processes</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="settings-group">
-                <h2>Let's Connect</h2>
-                <div className="action-buttons">
-                    <button className="xbox-btn" onClick={() => window.open('mailto:harshmgor@gmail.com')}>
-                        Send Email
-                    </button>
-                    <button className="xbox-btn secondary" onClick={() => window.open('https://github.com/iharshgor', '_blank')}>
-                        View GitHub
-                    </button>
-                    <button className="xbox-btn secondary" onClick={() => window.open('https://linkedin.com/in/iharshgor', '_blank')}>
-                        View LinkedIn
-                    </button>
+                {/* Socials Tile - "Join Party" */}
+                <div className="bento-tile social-tile">
+                    <div className="tile-header">
+                        <h3>Join Party</h3>
+                    </div>
+                    <div className="social-buttons">
+                        <button className="social-btn github" onClick={() => window.open('https://github.com/iharshgor', '_blank')}>
+                            <Github size={24} />
+                            <span>GitHub</span>
+                        </button>
+                        <button className="social-btn linkedin" onClick={() => window.open('https://linkedin.com/in/iharshgor', '_blank')}>
+                            <Linkedin size={24} />
+                            <span>LinkedIn</span>
+                        </button>
+                        <button className="social-btn email" onClick={() => window.open('mailto:harshmgor@gmail.com')}>
+                            <Mail size={24} />
+                            <span>Email</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
