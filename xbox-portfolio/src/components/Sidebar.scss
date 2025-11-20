@@ -19,6 +19,7 @@
 
         .nav-label {
             opacity: 1;
+            visibility: visible;
             transform: translateX(0);
         }
 
@@ -83,13 +84,14 @@
 
         .nav-label {
             position: absolute;
-            left: 70px;
+            left: 60px;
             white-space: nowrap;
             opacity: 0;
+            visibility: hidden;
             transform: translateX(-10px);
-            transition: all 0.2s var(--ease-out);
+            transition: all 0.3s var(--ease-out);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .active-indicator {

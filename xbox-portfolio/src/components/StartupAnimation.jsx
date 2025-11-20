@@ -40,7 +40,7 @@ const StartupAnimation = ({ onComplete }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
                 >
-                    <h1>XBOX</h1>
+                    <h1>iharshgor</h1>
                     <p>PORTFOLIO</p>
                 </motion.div>
             )}
