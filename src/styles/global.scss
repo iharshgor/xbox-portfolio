@@ -16,7 +16,8 @@ body {
     overflow: hidden;
     /* App-like feel */
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    /* Changed from 100vw to avoid scrollbar width issues */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -25,6 +26,8 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    /* Ensure root doesn't overflow */
 }
 
 /* Custom Scrollbar */
@@ -61,10 +64,17 @@ body {
     flex: 1;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll globally */
     scroll-behavior: smooth;
+    width: 100%;
+    position: relative;
 
     section {
         min-height: 100vh;
         width: 100%;
+        max-width: 100%;
+        /* Ensure sections don't overflow */
+        box-sizing: border-box;
     }
 }

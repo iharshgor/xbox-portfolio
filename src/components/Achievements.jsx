@@ -1,16 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Award, CheckCircle2, Code2, Cloud, Wrench, Database } from 'lucide-react';
+import { Trophy, Award, CheckCircle2, Code2, Server, Cloud, Database, Wrench, Terminal, Box, Boxes, Package } from 'lucide-react';
 import './Achievements.scss';
 
 const Achievements = () => {
-    const skills = {
-        languages: ['Python', 'JavaScript'],
-        devops: ['Jenkins', 'CI/CD', 'Docker', 'Kubernetes', 'Terraform', 'Linux'],
-        cloud: ['AWS', 'DigitalOcean'],
-        frameworks: ['FastAPI', 'ReactJS'],
-        databases: ['MySQL', 'RabbitMQ']
-    };
+    // Skills with icons
+    const allSkills = [
+        { name: 'Python', category: 'language', icon: Code2 },
+        { name: 'JavaScript', category: 'language', icon: Code2 },
+        { name: 'Jenkins', category: 'devops', icon: Wrench },
+        { name: 'CI/CD', category: 'devops', icon: Package },
+        { name: 'Docker', category: 'devops', icon: Box },
+        { name: 'Kubernetes', category: 'devops', icon: Boxes },
+        { name: 'Terraform', category: 'devops', icon: Server },
+        { name: 'Linux', category: 'devops', icon: Terminal },
+        { name: 'AWS', category: 'cloud', icon: Cloud },
+        { name: 'DigitalOcean', category: 'cloud', icon: Cloud },
+        { name: 'FastAPI', category: 'framework', icon: Code2 },
+        { name: 'ReactJS', category: 'framework', icon: Code2 },
+        { name: 'MySQL', category: 'database', icon: Database },
+        { name: 'RabbitMQ', category: 'database', icon: Database },
+    ];
 
     const certifications = [
         {
@@ -57,14 +67,6 @@ const Achievements = () => {
 
     const totalScore = certifications.reduce((acc, curr) => acc + curr.score, 0);
 
-    const skillCategories = [
-        { name: 'Languages', icon: Code2, items: skills.languages, color: '#3776AB' },
-        { name: 'DevOps & Tools', icon: Wrench, items: skills.devops, color: '#326CE5' },
-        { name: 'Cloud', icon: Cloud, items: skills.cloud, color: '#FF9900' },
-        { name: 'Frameworks', icon: Code2, items: skills.frameworks, color: '#61DAFB' },
-        { name: 'Databases', icon: Database, items: skills.databases, color: '#4479A1' },
-    ];
-
     return (
         <div className="achievements-view">
             <div className="section-header">
@@ -82,27 +84,21 @@ const Achievements = () => {
             </div>
 
             <div className="content-grid">
-                {/* Skills Section */}
+                {/* Skills Section - Tag Cloud */}
                 <div className="skills-panel">
                     <h2>Technical Skills</h2>
-                    <div className="skills-compact">
-                        {skillCategories.map((category, index) => (
+                    <div className="skills-cloud">
+                        {allSkills.map((skill, index) => (
                             <motion.div
                                 key={index}
-                                className="skill-row"
-                                initial={{ x: -20, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                transition={{ delay: index * 0.05 }}
+                                className={`skill-box ${skill.category}`}
+                                initial={{ scale: 0, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ delay: index * 0.03 }}
+                                whileHover={{ scale: 1.05, y: -5 }}
                             >
-                                <div className="skill-header">
-                                    <category.icon size={16} style={{ color: category.color }} />
-                                    <span>{category.name}</span>
-                                </div>
-                                <div className="skill-tags">
-                                    {category.items.map((skill, i) => (
-                                        <span key={i} className="skill-tag">{skill}</span>
-                                    ))}
-                                </div>
+                                <skill.icon size={24} />
+                                <span>{skill.name}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -119,10 +115,10 @@ const Achievements = () => {
                                 initial={{ scale: 0.9, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: index * 0.05 }}
-                                whileHover={{ scale: 1.03 }}
+                                whileHover={{ scale: 1.02 }}
                             >
                                 <div className="cert-icon" style={{ color: item.color }}>
-                                    <item.icon size={24} />
+                                    <item.icon size={20} />
                                 </div>
                                 <div className="cert-content">
                                     <h3>{item.title}</h3>

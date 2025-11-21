@@ -159,4 +159,34 @@
             color: var(--text-secondary);
         }
     }
+
+    /* Mobile Optimization */
+    @media (max-width: 768px) {
+        padding: 20px 16px 80px 16px;
+        /* Bottom padding for nav bar */
+
+        .dashboard-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--gap-sm);
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .dashboard-grid {
+            grid-template-columns: repeat(2, 1fr);
+            /* Force 2 columns on mobile */
+            grid-auto-rows: 100px;
+            /* Slightly smaller rows */
+            gap: var(--gap-sm);
+        }
+
+        /* Make hero tile span full width on mobile */
+        .hero-tile {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+    }
 }
